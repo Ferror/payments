@@ -1,0 +1,19 @@
+{
+    "source": {
+        "directories": [
+            "tests"
+        ]
+    },
+    "tmpDir": "var",
+    "mutators": {
+        "@default": true,
+        "@function_signature": false
+    },
+    "logs": {
+        "text": "var/infection/infection.log"
+    },
+    "phpUnit": {
+        "customPath": "bin/phpunit"
+    },
+    "testFramework": "phpunit"
+}
