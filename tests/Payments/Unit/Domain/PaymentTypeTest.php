@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Ferror\Payments\Unit\Domain;
 
-use Ferror\Payments\Domain\PaymentType;
+use Ferror\Payments\Domain\Customer\Payment\PaymentType;
 use PHPUnit\Framework\TestCase;
 
 final class PaymentTypeTest extends TestCase

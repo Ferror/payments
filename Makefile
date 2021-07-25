@@ -4,3 +4,7 @@ run:
 test:
 	XDEBUG_MODE=coverage bin/phpunit --coverage-clover=var/build/coverage.xml
 	XDEBUG_MODE=coverage vendor/bin/infection
+ci:
+	composer validate
+	vendor/bin/deptrac analyze .deptrac/namespace.yaml --cache-file=var/cache/deptrac/.deptrac.cache
+	bin/phpunit

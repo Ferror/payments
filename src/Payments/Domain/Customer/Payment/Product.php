@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Ferror\Payments\Domain\Customer\Payment;
 
-use Ferror\Payments\Domain\CustomerPayment\Product\ProductIdentifier;
-use Ferror\Payments\Domain\CustomerPayment\Product\ProductPrice;
+use Ferror\Payments\Domain\Customer\Payment\Product\ProductIdentifier;
+use Ferror\Payments\Domain\Customer\Payment\Product\ProductPrice;
 
 final class Product
 {
