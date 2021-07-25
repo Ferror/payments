@@ -1,10 +1,13 @@
 {
     "source": {
         "directories": [
-            "tests"
+            "src"
+        ],
+        "excludes": [
+            "Kernel.php"
         ]
     },
-    "tmpDir": "var",
+    "tmpDir": "var/cache",
     "mutators": {
         "@default": true,
         "@function_signature": false
