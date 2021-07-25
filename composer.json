@@ -30,6 +30,9 @@
     "autoload": {
         "psr-4": {
             "Ferror\\": "src"
+        },
+        "psr-0": {
+            "": "lib"
         }
     },
     "autoload-dev": {
