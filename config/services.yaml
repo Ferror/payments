@@ -4,3 +4,13 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+
+    Ferror\Payments\Presentation\Console\:
+        resource: '../src/Payments/Presentation/Console/*'
+
+# MEMORY
+    Ferror\Payments\Infrastructure\Memory\Repository\MemoryCustomerRepository: ~
+    Ferror\Payments\Infrastructure\Memory\Query\MemoryCustomerQuery: ~
+
+    Ferror\Payments\Application\Repository\CustomerRepository: '@Ferror\Payments\Infrastructure\Memory\Repository\MemoryCustomerRepository'
+    Ferror\Payments\Application\Query\CustomerQuery: '@Ferror\Payments\Infrastructure\Memory\Query\MemoryCustomerQuery'
