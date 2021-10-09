@@ -3,9 +3,8 @@ declare(strict_types=1);
 
 namespace Ferror\Payments\Presentation\Console\Customer;
 
-use Ferror\Payments\Application\Repository\CustomerRepository;
-use Ferror\Payments\Domain\Customer;
-use Ferror\Payments\Domain\Customer\CustomerIdentifier;
+use Ferror\Payments\Application\Action\CreateCustomer;
+use Ferror\Payments\Application\Query\CustomerQuery;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,9 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class CreateCustomerCommand extends Command
 {
     public function __construct(
-        private CustomerRepository $customerRepository
-    )
-    {
+        private CreateCustomer $action,
+        private CustomerQuery $customerQuery,
+    ) {
         parent::__construct();
     }
 
@@ -26,14 +25,14 @@ final class CreateCustomerCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->customerRepository->create(
-            new Customer(
-                new CustomerIdentifier(\base64_encode(\random_bytes(16))),
-                new \Collection(),
-                new \Collection(),
-                new \Collection(),
-            )
-        );
+        try {
+            $customer = $this->customerQuery->get(
+                $this->action->execute()->getIdentifier()
+            );
+            $output->writeln('id: ' . $customer->getIdentifier());
+        } catch (\Exception $e) {
+            return Command::FAILURE;
+        }
 
         return Command::SUCCESS;
     }

@@ -24,3 +24,24 @@ The logic problem does not apply to the fixed discounts, but it will expand your
 Money is an aggregate of some sort of value with currency and taxes like 100$ + 23% vat tax
 
 Price is an aggregate of value in currency like 100$
+
+## Payment vs Transaction
+
+Customer <-> Payment <-> Customer
+
+* Payment
+* Customer
+* Invoice
+* Discount
+
+# API Flow
+
+Client (Mobile or Frontend App) Authenticates user and gets access to the identifier - then has access to the API.
+
+* /customers/{id}
+  * /payments
+  * /payment-requests
+  * /billing-addresses
+  * /products
+  * /discounts
+  * /invoices

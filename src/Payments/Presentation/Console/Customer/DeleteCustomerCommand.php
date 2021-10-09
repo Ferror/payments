@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Ferror\Payments\Presentation\Console\Customer;
 
-use Ferror\Payments\Application\Repository\CustomerRepository;
+use Ferror\Payments\Application\Action\DeleteCustomer;
 use Ferror\Payments\Domain\Customer\CustomerIdentifier;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,9 +13,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 final class DeleteCustomerCommand extends Command
 {
     public function __construct(
-        private CustomerRepository $customerRepository
-    )
-    {
+        private DeleteCustomer $action,
+    ) {
         parent::__construct();
     }
 
@@ -27,7 +26,7 @@ final class DeleteCustomerCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->customerRepository->delete(new CustomerIdentifier($input->getArgument('customer_identifier')));
+        $this->action->execute(new CustomerIdentifier($input->getArgument('customer_identifier')));
 
         return Command::SUCCESS;
     }

@@ -12,6 +12,7 @@ final class Customer
         private \Collection $payments,
         private \Collection $paymentMethods,
         private \Collection $billingAddresses,
+        private \Collection $paymentRequests,
     )
     {
     }

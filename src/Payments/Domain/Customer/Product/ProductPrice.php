@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Ferror\Payments\Domain\Customer\Payment\Product;
+namespace Ferror\Payments\Domain\Customer\Product;
 
 use Ferror\SharedKernel\Currency;
 use Ferror\SharedKernel\Money;

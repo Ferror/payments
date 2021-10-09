@@ -18,12 +18,12 @@
         "symfony/yaml": "5.3.*"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "infection/infection": "^0.23",
         "phpunit/phpunit": "^9.5",
+        "qossmic/deptrac-shim": "^0.15",
+        "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "5.3.*",
-        "symfony/phpunit-bridge": "5.3.*",
-        "qossmic/deptrac-shim": "^0.14"
+        "symfony/phpunit-bridge": "5.3.*"
     },
     "config": {
         "optimize-autoloader": true,

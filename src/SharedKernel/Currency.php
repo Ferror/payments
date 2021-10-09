@@ -5,5 +5,4 @@ namespace Ferror\SharedKernel;
 
 final class Currency
 {
-
 }

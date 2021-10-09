@@ -6,7 +6,14 @@ services:
         autoconfigure: true
 
     Ferror\Payments\Presentation\Console\:
-        resource: '../src/Payments/Presentation/Console/*'
+        resource: '../src/Payments/Presentation/Console/'
+
+    Ferror\Payments\Presentation\Web\:
+        resource: '../src/Payments/Presentation/Web/'
+        tags: ['controller.service_arguments']
+
+    Ferror\Payments\Application\Action\:
+        resource: '../src/Payments/Application/Action/'
 
 # MEMORY
     Ferror\Payments\Infrastructure\Memory\Repository\MemoryCustomerRepository: ~

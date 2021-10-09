@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Ferror\Payments\Application\View;
 
-final class CustomerView
+use JsonSerializable;
+
+final class CustomerView implements JsonSerializable
 {
     public function __construct(
         private string $identifier,
@@ -14,5 +16,12 @@ final class CustomerView
     public function getIdentifier(): string
     {
         return $this->identifier;
+    }
+
+    public function jsonSerialize(): array
+    {
+        return [
+            'identifier' => $this->identifier,
+        ];
     }
 }
