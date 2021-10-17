@@ -12,6 +12,8 @@
         "@default": true,
         "@function_signature": false
     },
+    "minMsi": 40,
+    "minCoveredMsi": 70,
     "logs": {
         "text": "var/log/infection/infection.log"
     },

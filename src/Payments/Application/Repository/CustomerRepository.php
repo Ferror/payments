@@ -8,7 +8,7 @@ use Ferror\Payments\Domain\Customer\CustomerIdentifier;
 
 interface CustomerRepository
 {
-    public function find(CustomerIdentifier $identifier): Customer;
-    public function delete(CustomerIdentifier $identifier): void;
     public function create(Customer $customer): void;
+    public function delete(CustomerIdentifier $identifier): void;
+    public function find(CustomerIdentifier $identifier): Customer;
 }

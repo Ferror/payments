@@ -13,8 +13,7 @@ final class Customer
         private \Collection $paymentMethods,
         private \Collection $billingAddresses,
         private \Collection $paymentRequests,
-    )
-    {
+    ) {
     }
 
     public function getIdentifier(): CustomerIdentifier

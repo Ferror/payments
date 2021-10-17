@@ -5,16 +5,11 @@ namespace Ferror\Payments\Application\View;
 
 use JsonSerializable;
 
-final class CustomerView implements JsonSerializable
+final class PaymentView implements JsonSerializable
 {
     public function __construct(
         private string $identifier,
     ) {
-    }
-
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
     }
 
     public function jsonSerialize(): array

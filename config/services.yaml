@@ -19,5 +19,11 @@ services:
     Ferror\Payments\Infrastructure\Memory\Repository\MemoryCustomerRepository: ~
     Ferror\Payments\Infrastructure\Memory\Query\MemoryCustomerQuery: ~
 
+    Ferror\Payments\Infrastructure\Memory\Repository\MemoryPaymentRepository: ~
+    Ferror\Payments\Infrastructure\Memory\Query\MemoryPaymentQuery: ~
+
     Ferror\Payments\Application\Repository\CustomerRepository: '@Ferror\Payments\Infrastructure\Memory\Repository\MemoryCustomerRepository'
     Ferror\Payments\Application\Query\CustomerQuery: '@Ferror\Payments\Infrastructure\Memory\Query\MemoryCustomerQuery'
+
+    Ferror\Payments\Application\Repository\PaymentRepository: '@Ferror\Payments\Infrastructure\Memory\Repository\MemoryPaymentRepository'
+    Ferror\Payments\Application\Query\PaymentQuery: '@Ferror\Payments\Infrastructure\Memory\Query\MemoryPaymentQuery'

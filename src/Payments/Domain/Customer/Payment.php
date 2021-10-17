@@ -11,6 +11,7 @@ final class Payment
 {
     public function __construct(
         private PaymentIdentifier $identifier,
+        private CustomerIdentifier $customerIdentifier,
         private PaymentType $type,
         private PaymentStatus $status,
         private \Collection $products,
@@ -22,5 +23,10 @@ final class Payment
     public function changeStatus(PaymentStatus $status): void
     {
         $this->status = $status;
+    }
+
+    public function getIdentifier(): PaymentIdentifier
+    {
+        return $this->identifier;
     }
 }

@@ -15,7 +15,7 @@ final class ReadCustomerController
     ) {
     }
 
-    #[Route(path: '/customers/{identifier}', name: "CUSTOMER_GET", methods: ['GET'])]
+    #[Route(path: '/customers/{identifier}', name: 'CUSTOMER_GET', methods: ['GET'])]
     public function __invoke(string $identifier): JsonResponse
     {
         return new JsonResponse($this->customerQuery->get(new CustomerIdentifier($identifier)), 200);

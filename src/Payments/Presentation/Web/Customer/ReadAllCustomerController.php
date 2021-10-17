@@ -14,7 +14,7 @@ final class ReadAllCustomerController
     ) {
     }
 
-    #[Route(path: '/customers', name: "CUSTOMER_ALL_GET", methods: ['GET'])]
+    #[Route(path: '/customers', name: 'CUSTOMER_ALL_GET', methods: ['GET'])]
     public function __invoke(): JsonResponse
     {
         return new JsonResponse($this->customerQuery->getAll(), 200);
