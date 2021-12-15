@@ -17,7 +17,7 @@ services:
                 ipv4_address: 192.168.11.2
 
     symfony:
-        image: ferror/symfony-image:8.0
+        image: ferror/symfony-image:8.1
         command: ["make", "run"]
         labels:
             - "traefik.enable=true"
