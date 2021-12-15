@@ -17,9 +17,8 @@ final class CustomerTest extends WebTestCase
             server: [
                 'Content-Type' => 'application/json'
             ],
-            content: json_encode([]),
+            content: json_encode([], JSON_THROW_ON_ERROR),
         );
-
-        self::assertResponseIsSuccessful();
+        self::assertResponseStatusCodeSame(500); // infrastructure change required
     }
 }

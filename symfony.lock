@@ -1,4 +1,7 @@
 {
+    "composer/pcre": {
+        "version": "1.0.0"
+    },
     "composer/xdebug-handler": {
         "version": "2.0.1"
     },
@@ -282,9 +285,6 @@
         "version": "v1.23.0"
     },
     "symfony/polyfill-php80": {
-        "version": "v1.23.0"
-    },
-    "symfony/polyfill-php81": {
         "version": "v1.23.0"
     },
     "symfony/process": {
