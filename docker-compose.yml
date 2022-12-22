@@ -12,9 +12,6 @@ services:
             - "8080:8080"
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
-        networks:
-            ferror:
-                ipv4_address: 192.168.11.2
 
     symfony:
         image: ferror/symfony-image:8.1
@@ -24,13 +21,3 @@ services:
             - "traefik.http.routers.symfony.rule=Host(`symfony.malcherczyk.localhost`)"
         volumes:
             - ./:/app:delegated
-        networks:
-            - ferror
-
-networks:
-    ferror:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: 192.168.11.0/24
